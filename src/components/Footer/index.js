@@ -9,8 +9,8 @@ const Footer = () => {
                 <img src="./images/tw.png" alt="Twiter icon" />
             </div>
             
-            <div>
-                <h2>Conheça meu portifólio</h2>
+            <div className="anchor-div">
+                <a href="https://github.com/thaleseqb?tab=repositories">Conheça meu repositório</a>
             </div>
 
             <div className="organo">
