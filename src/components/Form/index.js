@@ -5,15 +5,6 @@ import TextField from "../TextField";
 import "./Form.css"
 
 const Form = (props) => {
-    const times = [
-        "Programação",
-        "Frontend",
-        "DAta Science",
-        "DevOps",
-        "Mobile",
-        "Inovação e Gestão",
-        "UX e Design"
-    ]
 
     const [name, setName] = useState("");
     const [role, setRole] = useState("");
@@ -56,7 +47,7 @@ const Form = (props) => {
                 />
                 <DropDown 
                     required={true} 
-                    itens={times} 
+                    itens={props.teams} 
                     label="Time"
                     value={team}
                     onChanging={value => setTeam(value)}

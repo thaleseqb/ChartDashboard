@@ -53,7 +53,13 @@ function App() {
   return (
     <div className="App">
       <Banner/>
-      <Form onAddedColaborator={colaborator => onNewAddedColaborator(colaborator)}/>
+      <Form
+        teams={teams.map(item => {
+          return item.name
+        })}
+        onAddedColaborator={colaborator => 
+        onNewAddedColaborator(colaborator)}
+      />
       {teams.map(team => {
         return <Team 
           key={team.name} 
