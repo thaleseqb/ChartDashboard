@@ -11,7 +11,8 @@ const DropDown = (props) => {
                 value={props.value}
                 onChange={event => props.onChanging(event.target.value)}
             >
-                {props.itens.map(item => {
+            <option value=""></option>
+            {props.itens.map(item => {
                     return <option key={item}>{item}</option>
                 })};
             </select>
