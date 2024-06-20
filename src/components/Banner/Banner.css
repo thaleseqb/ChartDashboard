@@ -1,5 +1,9 @@
+:root {
+    --banner-color: #6278F7;
+}
+
 .banner {
-    background-color: #6278F7;
+    background-color: var(--banner-color);
     text-align: center;
 }
 

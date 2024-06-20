@@ -1,0 +1,19 @@
+:root {
+    --hover-button: #95FFD4;
+}
+
+.button {
+    margin-top: 40px;
+    color: var(--white-color);
+    background-color: var(--banner-color);
+    padding: 32px;
+    border-radius: 10px;
+    border: none;
+    font-family: var(--main-font);
+    font-weight: 700;
+    font-size: 18px;
+}
+
+.button:hover {
+    color: var(--hover-button);
+}
