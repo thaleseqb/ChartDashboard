@@ -3,7 +3,7 @@ import "./Team.css"
 
 const Team = (props) => {
     return (
-        <section className="team" style={
+        ( props.colaborators.length > 0 ) && <section className="team" style={
             {
                 backgroundColor: props.secundaryColor,
             }
@@ -13,6 +13,14 @@ const Team = (props) => {
                     borderColor: props.primaryColor
                 }
             }>{props.name}</h3>
+            
+            <div className="colaborators">
+                {props.colaborators.map(colaborator => <Colaborator
+                    name={colaborator.name}
+                    role={colaborator.role}
+                    image={colaborator.image}
+                />)}
+            </div>
         </section>
     )
 }

@@ -11,6 +11,13 @@ const Form = (props) => {
     const [image, setImage] = useState("");
     const [team, setTeam] = useState("");
 
+    const resetForm = () => {
+        setName("");
+        setImage("");
+        setRole("");
+        setTeam("");
+    }
+
     const onSave = (event) => {
         event.preventDefault();
         props.onAddedColaborator({
@@ -19,6 +26,7 @@ const Form = (props) => {
             image,
             team
         });
+        resetForm();
     }
 
     return (
