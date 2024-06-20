@@ -1,4 +1,4 @@
-.footer {
+.page-footer {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -7,26 +7,26 @@
     background-image: url("../../../public/images/fundo.png");
 }
 
-.footer div {
+.page-footer div {
     font-family: var(--main-font);
     color: var(--white-color);
 }
 
-.footer .icons {
+.page-footer .icons {
     display: flex;
     padding: 90px 0;
     margin-left: 190px;
 }
 
-.footer .icons img {
+.page-footer .icons img {
     padding: 0 12px;
 }
 
-.footer .organo img {
+.page-footer .organo img {
     padding: 0 64px;
 }
 
-.footer .anchor-div a {
+.page-footer .anchor-div a {
     text-decoration: none;
     color: var(--white-color);
     font-family: var(--main-font);

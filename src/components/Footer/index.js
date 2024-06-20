@@ -2,7 +2,7 @@ import "./Footer.css"
 
 const Footer = () => {
     return (
-        <footer className="footer">
+        <footer className="page-footer">
             <div className="icons">
                 <img src="./images/fb.png" alt="Facebook icon" />
                 <img src="./images/ig.png" alt="Instagram icon" />
