@@ -1,0 +1,21 @@
+.DropDownContainer label {
+    display: block;
+    font-weight: 600;
+    font-family: var(--main-font);
+    font-size: 24px;
+    margin-bottom: 8px;
+    
+}
+
+.DropDownContainer select {
+    background-color: var(--white-color);
+    box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.06);
+    width: 100%;
+    border: none;
+    font-family: var(--main-font);
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19.5px;
+    padding: 24px;
+    box-sizing: border-box;
+}
