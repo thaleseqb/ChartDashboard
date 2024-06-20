@@ -4,7 +4,7 @@ import DropDown from "../DropDown";
 import TextField from "../TextField";
 import "./Form.css"
 
-const Form = () => {
+const Form = (props) => {
     const times = [
         "Programação",
         "Frontend",
@@ -22,7 +22,12 @@ const Form = () => {
 
     const onSave = (event) => {
         event.preventDefault();
-        console.log("Form foi submetido => ", name, role, image, team);
+        props.onAddedColaborator({
+            name,
+            role,
+            image,
+            team
+        });
     }
 
     return (
