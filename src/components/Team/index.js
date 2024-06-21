@@ -1,31 +1,33 @@
 import Colaborator from "../Colaborator"
 import "./Team.css"
+import hexToRgba from "hex-to-rgba"
 
-const Team = ({name, primaryColor, secundaryColor, colaborators, onDelete, changeColor}) => {
+const Team = ({name, color, colaborators, onDelete, changeColor}) => {
     return (
         ( colaborators.length > 0 ) && <section className="team" style={
             {
-                backgroundColor: secundaryColor,
+                backgroundColor: hexToRgba(color, '0.6'),
             }
         }>
-            <input onChange={event => {
-                    console.log(name);
-                    return changeColor(event.target.value, name)
-                }} 
-                    value={secundaryColor} 
+            <input 
+                    onChange={event => {
+                        return changeColor(event.target.value, name);
+                        }
+                    }
+                    value={color} 
                     type="color" 
                     className="input-color"
                 />
             <h3 style={
                 {
-                    borderColor: primaryColor
+                    borderColor: color
                 }
             }>{name}</h3>
             
             <div className="colaborators">
                 {colaborators.map(colaborator => <Colaborator
                     onDelete={onDelete}
-                    backgroundColor={primaryColor}
+                    backgroundColor={color}
                     key={colaborator.name}
                     name={colaborator.name}
                     role={colaborator.role}

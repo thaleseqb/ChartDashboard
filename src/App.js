@@ -9,38 +9,31 @@ function App() {
   const [teams, setTeams] = useState([
     {
       name:"Programação",
-      primaryColor:"#57C278",
-      secundaryColor:"#D9F7E9"
+      color:"#57C278",
     },
     {
       name:"Frontend",
-      primaryColor:"#82CFFA",
-      secundaryColor:"#E8F8FF"
+      color:"#82CFFA",
     },
     {
       name:"Data Science",
-      primaryColor:"#A6D157",
-      secundaryColor:"#F0F8E2"
+      color:"#A6D157",
     },
     {
       name:"DevOps",
-      primaryColor:"#E06B69",
-      secundaryColor:"#FDE7E8"
+      color:"#E06B69",
     },
     {
       name:"Mobile",
-      primaryColor:"#DB6EBF",
-      secundaryColor:"#FAE9F5"
+      color:"#DB6EBF",
     },
     {
       name:"Inovação e Gestão",
-      primaryColor:"#FFBA05",
-      secundaryColor:"#FFF5D9"
+      color:"#FFBA05",
     },
     {
       name:"UX e Design",
-      primaryColor:"#FF8A29",
-      secundaryColor:"#FFEEDF"
+      color:"#FF8A29",
     }
   ]);
 
@@ -57,7 +50,7 @@ function App() {
   function changeTeamColor(color, teamName) {
     setTeams(teams.map(team => {
       if (team.name === teamName) {
-        team.primaryColor = color
+        team.color = color
       }
       return team;
     }))
@@ -79,8 +72,7 @@ function App() {
           onDelete={deleteColaborator}
           key={team.name} 
           name={team.name}
-          primaryColor={team.primaryColor}
-          secundaryColor={team.secundaryColor}
+          color={team.color}
           colaborators={colaborators.filter(colaborator => {
             return colaborator.team === team.name;
           })}
