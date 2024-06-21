@@ -66,10 +66,15 @@ function App() {
     }))
   }
 
+  function teamRegistration(newTeam) {
+    setTeams([...teams, {...newTeam, id:uuidv4()}])
+  }
+
   return (
     <div className="App">
       <Banner/>
       <Form
+        teamRegistration={teamRegistration}
         teams={teams.map(item => {
           return item.name
         })}

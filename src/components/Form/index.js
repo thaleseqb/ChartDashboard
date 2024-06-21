@@ -4,12 +4,16 @@ import DropDown from "../DropDown";
 import TextField from "../TextField";
 import "./Form.css"
 
-const Form = (props) => {
+const Form = ({teams, onAddedColaborator, teamRegistration}) => {
 
     const [name, setName] = useState("");
     const [role, setRole] = useState("");
     const [image, setImage] = useState("");
     const [team, setTeam] = useState("");
+    
+    const [teamName, setTeamName] = useState("");
+    const [teamColor, setTeamColor] = useState("");
+
 
     const resetForm = () => {
         setName("");
@@ -20,7 +24,7 @@ const Form = (props) => {
 
     const onSave = (event) => {
         event.preventDefault();
-        props.onAddedColaborator({
+        onAddedColaborator({
             name,
             role,
             image,
@@ -55,13 +59,36 @@ const Form = (props) => {
                 />
                 <DropDown 
                     required={true} 
-                    itens={props.teams} 
+                    itens={teams} 
                     label="Time"
                     value={team}
                     onChanging={value => setTeam(value)}
                 />
                 <Button>
                     Criar Card
+                </Button>
+            </form>
+            <form onSubmit={(event) => {
+                event.preventDefault();
+                teamRegistration({name: teamName, color: teamColor})
+                }}>
+                <h2>Preencha os dados para criar um novo time</h2>
+                <TextField
+                    required 
+                    label="Nome" 
+                    placeholder="Digite o nome do time"
+                    value={teamName}
+                    onChanging={value=> setTeamName(value)}
+                />
+                <TextField 
+                    required 
+                    label="Cor" 
+                    placeholder="Digite a cor do time"
+                    value={teamColor}
+                    onChanging={value=> setTeamColor(value)}
+                />
+                <Button>
+                    Criar um novo time
                 </Button>
             </form>
         </section>
