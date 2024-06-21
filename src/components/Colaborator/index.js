@@ -1,10 +1,14 @@
 import { SlClose } from "react-icons/sl";
 import "./Colaborator.css"
 
-const Colaborator = ( {name, role, image, backgroundColor, onDelete} ) => {
+const Colaborator = ( {name, role, image, id, backgroundColor, onDelete} ) => {
     return (
         <div className="colaborator">
-            <SlClose size={25} className="delete" onClick={onDelete}/>
+            <SlClose 
+                size={25} 
+                className="delete" 
+                onClick={() => onDelete(id)}
+            />
             <div className="header" style={{backgroundColor}}>
                 <img src={image} alt="Thales Quadros" />
             </div>

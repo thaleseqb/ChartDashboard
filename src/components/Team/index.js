@@ -26,6 +26,7 @@ const Team = ({name, color, id, colaborators, onDelete, changeColor}) => {
             
             <div className="colaborators">
                 {colaborators.map(colaborator => <Colaborator
+                    id={colaborator.id}
                     onDelete={onDelete}
                     backgroundColor={color}
                     key={colaborator.name}

@@ -51,8 +51,10 @@ function App() {
     setColaborators([...colaborators, colaborator]);
   }
 
-  function deleteColaborator() {
-    console.log("deletando colaborador")
+  function deleteColaborator(id) {
+    setColaborators(colaborators.filter(colaborator => {
+      return colaborator.id !== id;
+    }))
   }
 
   function changeTeamColor(color, id) {
