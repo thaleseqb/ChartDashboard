@@ -50,6 +50,10 @@ function App() {
     setColaborators([...colaborators, colaborator]);
   }
 
+  function deleteColaborator() {
+    console.log("deletando colaborador")
+  }
+
   return (
     <div className="App">
       <Banner/>
@@ -62,6 +66,7 @@ function App() {
       />
       {teams.map(team => {
         return <Team 
+          onDelete={deleteColaborator}
           key={team.name} 
           name={team.name}
           primaryColor={team.primaryColor}

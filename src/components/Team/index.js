@@ -1,22 +1,23 @@
 import Colaborator from "../Colaborator"
 import "./Team.css"
 
-const Team = (props) => {
+const Team = ({name, primaryColor, secundaryColor, colaborators, onDelete}) => {
     return (
-        ( props.colaborators.length > 0 ) && <section className="team" style={
+        ( colaborators.length > 0 ) && <section className="team" style={
             {
-                backgroundColor: props.secundaryColor,
+                backgroundColor: secundaryColor,
             }
         }>
             <h3 style={
                 {
-                    borderColor: props.primaryColor
+                    borderColor: primaryColor
                 }
-            }>{props.name}</h3>
+            }>{name}</h3>
             
             <div className="colaborators">
-                {props.colaborators.map(colaborator => <Colaborator
-                    backgroundColor={props.primaryColor}
+                {colaborators.map(colaborator => <Colaborator
+                    onDelete={onDelete}
+                    backgroundColor={primaryColor}
                     key={colaborator.name}
                     name={colaborator.name}
                     role={colaborator.role}

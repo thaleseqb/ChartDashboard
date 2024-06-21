@@ -1,8 +1,9 @@
 import "./Colaborator.css"
 
-const Colaborator = ( {name, role, image, backgroundColor} ) => {
+const Colaborator = ( {name, role, image, backgroundColor, onDelete} ) => {
     return (
         <div className="colaborator">
+            <div className="deletar" onClick={onDelete}>deletar</div>
             <div className="header" style={{backgroundColor}}>
                 <img src={image} alt="Thales Quadros" />
             </div>
