@@ -2,7 +2,7 @@ import Colaborator from "../Colaborator"
 import "./Team.css"
 import hexToRgba from "hex-to-rgba"
 
-const Team = ({name, color, colaborators, onDelete, changeColor}) => {
+const Team = ({name, color, id, colaborators, onDelete, changeColor}) => {
     return (
         ( colaborators.length > 0 ) && <section className="team" style={
             {
@@ -11,7 +11,7 @@ const Team = ({name, color, colaborators, onDelete, changeColor}) => {
         }>
             <input 
                     onChange={event => {
-                        return changeColor(event.target.value, name);
+                        return changeColor(event.target.value, id);
                         }
                     }
                     value={color} 
