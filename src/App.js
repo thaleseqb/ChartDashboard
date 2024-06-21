@@ -6,7 +6,7 @@ import Footer from './components/Footer';
 
 function App() {
 
-  const teams = [
+  const [teams, setTeams] = useState([
     {
       name:"Programação",
       primaryColor:"#57C278",
@@ -42,7 +42,7 @@ function App() {
       primaryColor:"#FF8A29",
       secundaryColor:"#FFEEDF"
     }
-  ]
+  ]);
 
   const [colaborators, setColaborators] = useState([]);
 
@@ -52,6 +52,15 @@ function App() {
 
   function deleteColaborator() {
     console.log("deletando colaborador")
+  }
+
+  function changeTeamColor(color, teamName) {
+    setTeams(teams.map(team => {
+      if (team.name === teamName) {
+        team.primaryColor = color
+      }
+      return team;
+    }))
   }
 
   return (
@@ -65,7 +74,8 @@ function App() {
         onNewAddedColaborator(colaborator)}
       />
       {teams.map(team => {
-        return <Team 
+        return <Team
+          changeColor={changeTeamColor}
           onDelete={deleteColaborator}
           key={team.name} 
           name={team.name}

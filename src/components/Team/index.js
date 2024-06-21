@@ -1,13 +1,21 @@
 import Colaborator from "../Colaborator"
 import "./Team.css"
 
-const Team = ({name, primaryColor, secundaryColor, colaborators, onDelete}) => {
+const Team = ({name, primaryColor, secundaryColor, colaborators, onDelete, changeColor}) => {
     return (
         ( colaborators.length > 0 ) && <section className="team" style={
             {
                 backgroundColor: secundaryColor,
             }
         }>
+            <input onChange={event => {
+                    console.log(name);
+                    return changeColor(event.target.value, name)
+                }} 
+                    value={secundaryColor} 
+                    type="color" 
+                    className="input-color"
+                />
             <h3 style={
                 {
                     borderColor: primaryColor
