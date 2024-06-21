@@ -81,7 +81,8 @@ const Form = ({teams, onAddedColaborator, teamRegistration}) => {
                     onChanging={value=> setTeamName(value)}
                 />
                 <TextField 
-                    required 
+                    required
+                    type="color" 
                     label="Cor" 
                     placeholder="Digite a cor do time"
                     value={teamColor}

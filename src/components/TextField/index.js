@@ -1,20 +1,26 @@
 import "./TextField.css"
 
-const TextField = (props) => {
+const TextField = ({
+    type = "text", 
+    label, 
+    placeholder, 
+    value, 
+    onChanging, 
+    required=false}) => {
 
     const onDigiting = (event) => {
-        props.onChanging(event.target.value);
+        onChanging(event.target.value);
     }
 
     return (
-        <div className="container">
-            <label>{props.label}</label>
+        <div className={`container container-${type}`}>
+            <label>{label}</label>
             <input 
-                value={props.value} 
+                value={value} 
                 onChange={onDigiting} 
-                required={props.required} 
-                placeholder={props.placeholder} 
-                type="text" 
+                required={required} 
+                placeholder={placeholder} 
+                type={type} 
             />
         </div>
     )
